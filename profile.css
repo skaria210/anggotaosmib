@@ -1,0 +1,693 @@
+
+/* =========================================
+   OSMIB MEMBER PROFILE
+   Editorial Poster Style
+========================================= */
+
+:root {
+  --matcha: #8E9546;
+  --avocado: #BBCA6F;
+  --primrose: #E9E29B;
+  --tuft: #F2CFBB;
+  --strawberry: #F1B4AF;
+  --camaron: #F28892;
+
+  --forest: #263B30;
+  --deep-forest: #182B23;
+  --cream: #F8F7EF;
+  --ink: #2E3314;
+
+  --ease: cubic-bezier(.2, .8, .2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.profile-page {
+  max-width: 1500px;
+  margin: auto;
+  padding: 0 42px;
+  overflow: hidden;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+  min-height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.brand-icon {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--matcha);
+  color: white;
+  font-family: "Fraunces", serif;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 35px;
+}
+
+.navbar nav a {
+  font-size: .85rem;
+  font-weight: 700;
+  position: relative;
+}
+
+.navbar nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  width: 100%;
+  height: 2px;
+  background: var(--matcha);
+  transform: scaleX(0);
+  transition: transform .3s var(--ease);
+}
+
+.navbar nav a:hover::after {
+  transform: scaleX(1);
+}
+
+.back-link {
+  font-size: .8rem;
+  font-weight: 700;
+  padding: 10px 17px;
+  border: 1px solid var(--matcha);
+  border-radius: 30px;
+  transition: .3s var(--ease);
+}
+
+.back-link:hover {
+  background: var(--matcha);
+  color: white;
+}
+
+
+/* =========================================
+   TICKER
+========================================= */
+
+.ticker {
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--matcha);
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 3px;
+}
+
+.ticker-top {
+  border-top: 2px solid var(--matcha);
+  border-bottom: 2px solid var(--matcha);
+  padding: 5px 0;
+}
+
+.ticker div {
+  width: max-content;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.profile-hero {
+  position: relative;
+  min-height: 720px;
+  margin-top: 18px;
+  padding: 45px;
+  border-radius: 22px;
+  overflow: hidden;
+  isolation: isolate;
+
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(187, 202, 111, .18),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(241, 180, 175, .17),
+      transparent 30%
+    ),
+    var(--forest);
+
+  color: white;
+}
+
+/* Subtle pattern */
+.profile-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: .12;
+
+  background-image:
+    repeating-linear-gradient(
+      135deg,
+      transparent 0 12px,
+      rgba(255,255,255,.25) 12px 15px,
+      transparent 15px 25px
+    );
+
+  pointer-events: none;
+}
+
+
+/* Decorative circles */
+
+.hero-orbit {
+  position: absolute;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.orbit-one {
+  width: 500px;
+  height: 500px;
+  right: 5%;
+  top: 10%;
+}
+
+.orbit-two {
+  width: 350px;
+  height: 350px;
+  right: 10%;
+  top: 20%;
+}
+
+.hero-number {
+  position: absolute;
+  right: 35px;
+  bottom: -80px;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 23rem;
+  color: rgba(255,255,255,.035);
+  line-height: 1;
+  z-index: -1;
+}
+
+
+/* =========================================
+   INTRO CARD
+========================================= */
+
+.intro-card {
+  position: absolute;
+  top: 70px;
+  left: 45px;
+  z-index: 3;
+
+  width: min(390px, 34%);
+  padding: 20px 22px;
+
+  border: 1px solid rgba(255,255,255,.65);
+  border-radius: 15px;
+  background: rgba(255,255,255,.09);
+  backdrop-filter: blur(8px);
+}
+
+.eyebrow {
+  display: block;
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--primrose);
+}
+
+.intro-card p {
+  margin-top: 12px;
+  font-size: .83rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,.9);
+}
+
+
+/* =========================================
+   PORTRAIT
+========================================= */
+
+.portrait-frame {
+  position: absolute;
+  z-index: 2;
+
+  width: 42%;
+  height: 650px;
+
+  left: 37%;
+  bottom: -35px;
+
+  border: 7px solid white;
+  border-radius: 48% 48% 20px 20px;
+  overflow: hidden;
+
+  background: var(--avocado);
+  box-shadow: 0 20px 55px rgba(0,0,0,.25);
+}
+
+.portrait {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.portrait-label {
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  left: 20px;
+
+  padding: 8px 12px;
+  border-radius: 30px;
+
+  background: rgba(24,43,35,.8);
+  color: white;
+
+  font-size: .65rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.portrait-caption {
+  position: absolute;
+  z-index: 2;
+  bottom: 20px;
+  left: 20px;
+
+  padding: 8px 12px;
+  background: white;
+  color: var(--forest);
+
+  font-size: .65rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+
+/* =========================================
+   NAME
+========================================= */
+
+.name-block {
+  position: absolute;
+  z-index: 4;
+  left: 45px;
+  bottom: 105px;
+  max-width: 57%;
+}
+
+.name-small {
+  display: block;
+  margin-bottom: 8px;
+
+  color: var(--primrose);
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.name-block h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(4.5rem, 9vw, 9.5rem);
+  line-height: .82;
+  letter-spacing: -2px;
+
+  color: white;
+  text-shadow:
+    4px 5px 0 var(--matcha),
+    8px 9px 0 rgba(0,0,0,.15);
+}
+
+.position {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.position-line {
+  width: 50px;
+  height: 4px;
+  background: var(--primrose);
+  border-radius: 5px;
+}
+
+.position p {
+  font-size: 1.25rem;
+  font-weight: 800;
+  font-style: italic;
+}
+
+
+/* =========================================
+   QUOTE
+========================================= */
+
+.quote-card {
+  position: absolute;
+  z-index: 5;
+
+  right: 45px;
+  bottom: 75px;
+
+  width: 32%;
+  padding: 25px;
+
+  border: 2px solid rgba(255,255,255,.8);
+  border-radius: 17px;
+
+  background: rgba(255,255,255,.1);
+  backdrop-filter: blur(12px);
+}
+
+.quote-mark {
+  display: block;
+  font-family: "Fraunces", serif;
+  font-size: 3.5rem;
+  line-height: .8;
+  color: var(--primrose);
+}
+
+.quote-card blockquote {
+  font-family: "Fraunces", serif;
+  font-size: clamp(1rem, 1.5vw, 1.4rem);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.quote-author {
+  margin-top: 18px;
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--primrose);
+}
+
+
+/* =========================================
+   SIDE NOTE
+========================================= */
+
+.side-note {
+  position: absolute;
+  right: 45px;
+  top: 65px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.side-index {
+  color: var(--primrose);
+}
+
+.side-divider {
+  width: 35px;
+  height: 2px;
+  background: white;
+}
+
+
+/* =========================================
+   DETAILS
+========================================= */
+
+.profile-details {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+
+  padding: 85px 35px;
+}
+
+.detail-heading h2 {
+  margin-top: 12px;
+  font-family: "Fraunces", serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: var(--matcha);
+}
+
+.detail-content {
+  align-self: center;
+}
+
+.detail-content p {
+  font-size: .95rem;
+  line-height: 2;
+  color: #666B4B;
+}
+
+.return-button {
+  grid-column: 1 / -1;
+  justify-self: start;
+
+  margin-top: 10px;
+  padding: 13px 22px;
+
+  border-radius: 30px;
+  background: var(--matcha);
+  color: white;
+
+  font-size: .8rem;
+  font-weight: 800;
+
+  transition: .3s var(--ease);
+}
+
+.return-button:hover {
+  background: var(--forest);
+  transform: translateY(-3px);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+
+  padding: 25px 0;
+  border-top: 1px solid rgba(142,149,70,.4);
+
+  font-size: .65rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--matcha);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .profile-page {
+    padding: 0 20px;
+  }
+
+  .profile-hero {
+    min-height: 780px;
+    padding: 25px;
+  }
+
+  .intro-card {
+    left: 25px;
+    top: 35px;
+    width: 42%;
+  }
+
+  .portrait-frame {
+    width: 48%;
+    left: 42%;
+    height: 560px;
+  }
+
+  .name-block {
+    left: 25px;
+    bottom: 100px;
+    max-width: 65%;
+  }
+
+  .name-block h1 {
+    font-size: clamp(4rem, 10vw, 7rem);
+  }
+
+  .quote-card {
+    right: 25px;
+    bottom: 25px;
+    width: 42%;
+  }
+
+  .side-note {
+    right: 25px;
+    top: 35px;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .profile-page {
+    padding: 0 12px;
+  }
+
+  .navbar {
+    min-height: 75px;
+    flex-wrap: wrap;
+    padding: 15px 0;
+  }
+
+  .navbar nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .back-link {
+    font-size: .7rem;
+  }
+
+  .ticker {
+    font-size: 1.5rem;
+  }
+
+  .profile-hero {
+    min-height: 850px;
+    padding: 20px;
+  }
+
+  .intro-card {
+    top: 25px;
+    left: 20px;
+    width: calc(100% - 40px);
+    padding: 15px;
+  }
+
+  .intro-card p {
+    font-size: .75rem;
+  }
+
+  .side-note {
+    top: 160px;
+    right: 20px;
+    font-size: .55rem;
+  }
+
+  .portrait-frame {
+    width: 76%;
+    height: 480px;
+    left: 12%;
+    bottom: 205px;
+  }
+
+  .name-block {
+    left: 20px;
+    bottom: 105px;
+    max-width: 90%;
+  }
+
+  .name-block h1 {
+    font-size: clamp(4rem, 15vw, 6rem);
+  }
+
+  .position {
+    margin-top: 15px;
+  }
+
+  .position p {
+    font-size: 1rem;
+  }
+
+  .quote-card {
+    right: 20px;
+    bottom: 20px;
+    width: calc(100% - 40px);
+    padding: 15px 18px;
+  }
+
+  .quote-mark {
+    font-size: 2.5rem;
+  }
+
+  .quote-card blockquote {
+    font-size: 1rem;
+  }
+
+  .quote-author {
+    margin-top: 10px;
+  }
+
+  .hero-number {
+    font-size: 15rem;
+  }
+
+  .profile-details {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 55px 12px;
+  }
+
+  .return-button {
+    grid-column: auto;
+  }
+
+  footer {
+    flex-direction: column;
+    font-size: .6rem;
+  }
+}
