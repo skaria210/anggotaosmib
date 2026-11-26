@@ -184,15 +184,15 @@ h1, h2 { font-family: "Fraunces", Georgia, serif; }
 
 /* the figure pops out above the card like in the mockup */
 .member-figure {
-  position: absolute;
-  z-index: 2;
-  right: 56px;
-  bottom: 0;
-  fill: #1b1f0c;
-  transition: transform .4s var(--ease), fill .3s var(--ease);
-  transform-origin: bottom center;
+   width: 55%;
+   max-width: 280px;
+   height: 100%;
+   object-fit: contain;
+   object-position: bottom right;
+   position: absolute;
+   right: 15px;
+   bottom: 0;
 }
-.member-card .member-figure { height: calc(100% + 26px); width: auto; max-height: 215px; }
 
 /* ---- hover ---- */
 .member-card:hover,
