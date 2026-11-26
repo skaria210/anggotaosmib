@@ -16,11 +16,12 @@
   --cream: #F8F7EF;
   --ink: #2E3314;
 
-  --evergreen: #344c3d;
-  --sage: #829672;
-  --mauve: #d8959b;
-  --peony: #f2d1d4;
-  --mist: #f4f3f1;
+  --fern: #707318;
+  --heart-gold: #aba415;
+  --rosy-pink: #fb8ba3;
+  --powder-pink: #ffb1c2;
+  --peach-puff: #ffd4c9;
+  --white-lilac: #f9f8fe;
   
   --ease: cubic-bezier(.2, .8, .2, 1);
 }
@@ -165,8 +166,8 @@ a {
 
   /*  HOME PAGE GRADIENT */
   background: linear-gradient(105deg,
-              var(--evergreen) 0%, #344c3d 28%,
-              var(--peony) 68%, var(--mauve) 100%);
+              var(--powder-pink) 0%, #ffb1c2 28%,
+              var(--peach-puff) 68%, var(--heart-gold) 100%);
 }
 
 /*  HOME PAGE SPARKLES & CIRCLES */
