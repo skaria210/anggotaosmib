@@ -153,49 +153,14 @@ a {
    HERO
 ========================================= */
 
-.profile-hero {
-  position: relative;
-  min-height: 720px;
-  margin-top: 18px;
-  padding: 45px;
-  border-radius: 22px;
-  overflow: hidden;
-  isolation: isolate;
-
-   .member-card {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  min-height: 190px;
-  padding: 38px 48px;
-  border-radius: 34px;
-  isolation: isolate;
-  transition: transform .35s var(--ease), box-shadow .35s var(--ease);
-}
-
-/* layer 1: green -> pink gradient (slides a little on hover) */
-.member-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  border-radius: inherit;
-  background: linear-gradient(105deg,
-              var(--matcha) 0%, #A3AB57 28%,
-              var(--strawberry) 68%, var(--camaron) 100%);
-  background-size: 140% 100%;
-  background-position: 0% 0;
-  transition: background-position .6s var(--ease);
-}
-
-/* layer 2: pale circles, sparkles and slider dashes */
-.member-card::after {
+.profile-hero::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
   border-radius: inherit;
+  
+  /* 🌟 REPLACED WITH HOME PAGE SPARKLES & CIRCLES */
   background:
     /* slider dashes */
     linear-gradient(90deg,
@@ -216,6 +181,20 @@ a {
     radial-gradient(circle at 74% 84%, rgba(255,255,255,.8)  0 1.5px, transparent 2.5px),
     radial-gradient(circle at 93% 62%, rgba(255,255,255,.9)  0 1px,   transparent 2px);
 }
+
+   .member-card {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 190px;
+  padding: 38px 48px;
+  border-radius: 34px;
+  isolation: isolate;
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease);
+}
+
+
 /* Subtle pattern */
 .profile-hero::before {
   content: "";
