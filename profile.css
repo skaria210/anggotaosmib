@@ -162,27 +162,33 @@ a {
   overflow: hidden;
   isolation: isolate;
 
-  background:
+    background:
+    /* 1. Original Green Glow (Top Left) */
     radial-gradient(
-      circle at 15% 15%,
-      rgba(187, 202, 111, .18),
-      transparent 30%
+      circle at 15% 15%, 
+      rgba(187, 202, 111, 0.35), /* Brightened slightly */
+      transparent 45%
     ),
+    /* 2. YOUR New Pink Glow (Top Right) */
     radial-gradient(
-      circle at 85% 80%,
-      rgba(241, 180, 175, .17),
-      transparent 30%
+      circle at 90% 10%, 
+      rgba(242, 136, 146, 0.4), /* --camaron */
+      transparent 45%
     ),
-    linear-gradient(
-      135deg,
-      var(--deep-forest) 0%,
-      var(--forest) 50%,
-      #2c1e24 100% /* A very dark plum/brown to blend with the pink */
-    );
+    /* 3. Original Pink Glow (Bottom Right) */
+    radial-gradient(
+      circle at 85% 85%, 
+      rgba(241, 180, 175, 0.3), 
+      transparent 45%
+    ),
+    /* 4. YOUR New Pink Glow (Bottom Left) */
+    radial-gradient(
+      circle at 10% 90%, 
+      rgba(242, 136, 146, 0.4), /* --camaron */
+      transparent 45%
+    ),
+    /* 5. The Dark Green Base */
     var(--forest);
-
-  color: white;
-}
 
 /* Subtle pattern */
 .profile-hero::before {
@@ -190,7 +196,7 @@ a {
   position: absolute;
   inset: 0;
   z-index: -1;
-  opacity: .12;
+  opacity: 0.02;
 
   background-image:
     repeating-linear-gradient(
