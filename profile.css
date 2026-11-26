@@ -171,6 +171,12 @@ a {
       rgba(241, 180, 175, .17),
       transparent 30%
     ),
+    linear-gradient(
+      135deg,
+      var(--deep-forest) 0%,
+      var(--forest) 50%,
+      #2c1e24 100% /* A very dark plum/brown to blend with the pink */
+    );
     var(--forest);
 
   color: white;
