@@ -15,6 +15,12 @@
   --deep-forest: #182B23;
   --cream: #F8F7EF;
   --ink: #2E3314;
+
+  --evergreen: #344c3d;
+  --sage: #829672;
+  --mauve: #d8959b;
+  --peony: #f2d1d4;
+  --mist: #f4f3f1;
   
   --ease: cubic-bezier(.2, .8, .2, 1);
 }
@@ -157,13 +163,13 @@ a {
   isolation: isolate;
   color: white;
 
-  /* 🌟 HOME PAGE GRADIENT */
+  /*  HOME PAGE GRADIENT */
   background: linear-gradient(105deg,
-              var(--matcha) 0%, #A3AB57 28%,
-              var(--strawberry) 68%, var(--camaron) 100%);
+              var(--evergreen) 0%, #344c3d 28%,
+              var(--peony) 68%, var(--mauve) 100%);
 }
 
-/* 🌟 HOME PAGE SPARKLES & CIRCLES */
+/*  HOME PAGE SPARKLES & CIRCLES */
 .profile-hero::before {
   content: "";
   position: absolute;
